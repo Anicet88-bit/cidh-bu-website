@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cidh-bu.org/sitemap.xml
