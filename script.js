@@ -13,9 +13,6 @@ navItems.forEach(function (item) {
     });
 });
 
-
-// Certificate Verification
-
 // Certificate Verification
 
 const verificationForm = document.querySelector(".verification-form");
@@ -38,6 +35,7 @@ verificationForm.addEventListener("submit", function (event) {
     window.location.href = verificationURL;
 
 });
+
 const currentYear = document.querySelector("#current-year");
 
 if (currentYear) {
