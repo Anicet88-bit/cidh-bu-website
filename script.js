@@ -1,40 +1,50 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-});
-
-const navItems = document.querySelectorAll(".nav-links a");
-
-navItems.forEach(function (item) {
-    item.addEventListener("click", function () {
-        navLinks.classList.remove("active");
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
     });
-});
+
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    navItems.forEach(function (item) {
+        item.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+        });
+    });
+}
+
 
 // Certificate Verification
 
 const verificationForm = document.querySelector(".verification-form");
 const certificateNumber = document.querySelector("#certificate-number");
 
-verificationForm.addEventListener("submit", function (event) {
+if (verificationForm && certificateNumber) {
 
-    event.preventDefault();
+    verificationForm.addEventListener("submit", function (event) {
 
-    const number = certificateNumber.value.trim().toUpperCase();
+        event.preventDefault();
 
-    if (!number) {
-        return;
-    }
+        const number = certificateNumber.value.trim().toUpperCase();
 
-    const verificationURL =
-        "https://verify.cidh-bu.org?id=" +
-        encodeURIComponent(number);
+        if (!number) {
+            return;
+        }
 
-    window.location.href = verificationURL;
+        const verificationURL =
+            "https://verify.cidh-bu.org?id=" +
+            encodeURIComponent(number);
 
-});
+        window.location.href = verificationURL;
+
+    });
+
+}
+
+
+// Current Year
 
 const currentYear = document.querySelector("#current-year");
 
